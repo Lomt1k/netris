@@ -2,6 +2,8 @@ import { FC, useEffect, useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { videoMarksActions } from '../../store/actions';
 import { formatSecondsToMMSSsss } from '../../utils/Time';
+import TextButton from '../TextButton/TextButton';
+import { VideoMark } from '../../api/VideoMark';
 import './VideoPlayer.scss';
 
 type VideoPlayerProps = {
@@ -18,6 +20,13 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ videoUrl, dataUrl }) => {
     dispatch(videoMarksActions.fetchVideoMarksRequest(dataUrl));
   }, [dataUrl]);
 
+  const handleMarkClick = (mark: VideoMark) => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = mark.timestamp;
+      videoRef.current.play();
+    }
+  }
+
   return (
     <div className="video-player">
       <video ref={videoRef} controls width="100%">
@@ -30,7 +39,9 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ videoUrl, dataUrl }) => {
         <ul className="video-player__marks-list">
           {marks.map(mark => (
             <li key={mark.timestamp}>
-              {formatSecondsToMMSSsss(mark.timestamp)}
+              <TextButton onClick={() => handleMarkClick(mark)}>
+                {formatSecondsToMMSSsss(mark.timestamp)}
+              </TextButton>
             </li>
           ))}
         </ul>
