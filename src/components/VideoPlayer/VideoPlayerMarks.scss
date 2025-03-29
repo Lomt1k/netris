@@ -1,0 +1,22 @@
+.video-player-marks {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--color-gray);
+
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  &__loading {
+    color: var(--color-active);
+  }
+
+  &__error {
+    color: var(--color-error);
+  }
+}

@@ -1,0 +1,6 @@
+.video-player-rect {
+  position: absolute;
+  border: 3px solid var(--color-rect-border);
+  background-color: var(--color-rect);
+  pointer-events: none;
+}

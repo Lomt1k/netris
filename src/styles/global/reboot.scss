@@ -31,3 +31,19 @@ a {
     color: var(--color-active);
   }
 }
+
+video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+video::-webkit-media-controls-fullscreen-button {
+  display: none;
+}
+video::-moz-media-controls-fullscreen-button {
+  display: none;
+}
+video::-ms-fullscreen-button {
+  display: none;
+}
