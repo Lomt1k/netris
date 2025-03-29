@@ -1,0 +1,17 @@
+.header {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__logo {
+    @include vp-767 {
+      height: 50px;
+    }
+  }
+
+  &__text {
+    user-select: none;
+  }
+}
