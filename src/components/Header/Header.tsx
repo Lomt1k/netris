@@ -1,4 +1,4 @@
-import Container from '../ui/Container/Container';
+import Container from '../Container/Container';
 import IconLogo from '/src/assets/logo.svg?react';
 import './Header.scss';
 
@@ -7,7 +7,7 @@ const Header = () => {
     <header className="header">
       <Container>
         <div className="header__wrapper">
-          <IconLogo className='header__logo' aria-hidden={true} height={70} />
+          <IconLogo aria-hidden={true} height={40} />
           <span className="header__text">Тестовое задание</span>
         </div>
       </Container>

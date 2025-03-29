@@ -1,4 +1,4 @@
-import Container from '../ui/Container/Container';
+import Container from '../Container/Container';
 import './Footer.scss';
 
 const Footer = () => {
