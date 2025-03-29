@@ -5,6 +5,6 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
-    "types": ["@reduxjs/toolkit", "redux-saga"]
+    "types": ["@reduxjs/toolkit", "redux-saga", "vitest/globals"]
   }
 }
