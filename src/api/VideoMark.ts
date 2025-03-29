@@ -38,6 +38,9 @@ export const isVideoMarkZone = (obj: unknown): obj is VideoMarkZone => {
 
 export const fetchVideoMarks = async (url: string): Promise<VideoMark[]> => {
   const response = await fetch(url);
+  if (!response.ok) { 
+    throw new Error(`${response.status} ${response.statusText}`);
+  }
   const data = await response.json();
   if (isVideoMarkArray(data)) {
     return data;

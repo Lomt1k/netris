@@ -105,7 +105,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ videoUrl, dataUrl }) => {
   return (
     <div className="video-player" ref={videoContainerRef}>
       <div className="video-player__container">
-        <video ref={videoRef} controls width="100%">
+        <video ref={videoRef} controls width="100%" data-testid="video-player">
           <source src={videoUrl} type="video/mp4" />
           Ваш браузер не поддерживает видео.
         </video>

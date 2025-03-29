@@ -3,7 +3,7 @@ import { fetchVideoMarks, VideoMark } from '../api/VideoMark';
 import { videoMarksActions } from './actions';
 import { PayloadAction } from '@reduxjs/toolkit';
 
-function* fetchVideoMarksSaga(action: PayloadAction<string>) {
+export function* fetchVideoMarksSaga(action: PayloadAction<string>) {
   try {
     const marks: VideoMark[] = yield call(fetchVideoMarks, action.payload);
     const sortedMarks = [...marks].sort((a, b) => a.timestamp - b.timestamp);
